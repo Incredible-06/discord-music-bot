@@ -25,7 +25,19 @@ A feature-rich Discord music bot that supports YouTube and Spotify playback.
 git clone https://github.com/Incredible-06/discord-music-bot.git
 ```
 
-2. Install required dependencies:
+2. Create a virtual environment:
+```bash
+# Create virtual environment
+python -m venv .venv
+
+# Activate it on Windows
+.venv\Scripts\activate
+
+# Or activate it on Linux/Mac
+source .venv/bin/activate
+```
+
+3. Install required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
@@ -33,8 +45,12 @@ pip install -r requirements.txt
 ## Quick Start with Batch File 🚀
 
 1. Locate the `start_bot.bat` file in the project directory
-2. Edit the file with your own credentials:
+2. Edit the file with your own credentials and virtual environment path:
 ```batch
+:: If you used a different name for your virtual environment
+:: modify this line accordingly (e.g., "venv" or "env")
+set VENV_PATH=.venv\Scripts\activate.bat
+
 set BOT_TOKEN=your_discord_bot_token_here
 set SPOTIFY_CLIENT_ID=your_spotify_client_id_here
 set SPOTIFY_CLIENT_SECRET=your_spotify_client_secret_here
@@ -42,13 +58,13 @@ set SPOTIFY_CLIENT_SECRET=your_spotify_client_secret_here
 3. Double-click `start_bot.bat` to run the bot automatically
 
 This method will:
-- Activate the virtual environment
+- Activate your virtual environment (using the path specified in VENV_PATH)
 - Set up your environment variables
 - Start the bot
 
-The advantage of using the .bat file is that you only need to configure your credentials once, and you won't need to manually set the environment variables each time you want to run the bot.
-
-⚠️ Important: Never share your `start_bot.bat` file or commit it to version control, as it contains your private credentials.
+⚠️ Important: 
+- Never share your `start_bot.bat` file or commit it to version control, as it contains your private credentials
+- Make sure VENV_PATH matches your virtual environment location if you used a different name than `.venv`
 
 ## Manual Environment Setup 🔑
 
